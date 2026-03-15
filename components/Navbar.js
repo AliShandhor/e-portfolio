@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -28,13 +29,13 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a
+        <Link
           href="/"
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="font-mono text-sm text-accent font-medium tracking-wider cursor-pointer"
         >
           ali<span className="text-green">.</span>sh
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
