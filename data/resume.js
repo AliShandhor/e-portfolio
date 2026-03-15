@@ -40,7 +40,7 @@ export const experience = [
     tech: ["Python", "Jupyter", "REST", "NETCONF", "gRPC", "Jenkins", "CI/CD"],
   },
   {
-    role: "Software Developer Co-op",
+    role: "Software Engineering Intern",
     company: "Ericsson",
     location: "Ottawa, ON, Canada",
     period: "Jan 2024 – Dec 2024",
@@ -120,10 +120,10 @@ DATABASES   MongoDB · SQL · NoSQL`,
   experience: `[Current]  Software Engineering Intern @ Ciena         Sept 2025 – Present
              Optical network automation · gRPC · REST · Jenkins
 
-[2024]     Software Developer Co-op @ Ericsson          Jan 2024 – Dec 2024
+[2024]     Software Engineering Intern @ Ericsson          Jan 2024 – Dec 2024
              5G test framework · 50% perf improvement · pandas
 
-[2023]     AI Software Dev Intern @ Vosyn               Jul 2023 – Oct 2023
+[2023]     AI Software Development Intern @ Vosyn               Jul 2023 – Oct 2023
              PyTorch · Vision Transformer · Voice synthesis`,
 
   contact: `EMAIL    ali2030@my.yorku.ca
