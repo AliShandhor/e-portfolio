@@ -39,9 +39,9 @@ export default function Terminal() {
   const [input, setInput] = useState("");
   const [cmdHistory, setCmdHistory] = useState([]);
   const [histIdx, setHistIdx] = useState(-1);
+  const terminalBodyRef = useRef(null); // scroll INSIDE terminal, not page
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
-  // Keep a ref to history so runCommand never reads stale closure state
   const historyRef = useRef([{ type: "system", text: WELCOME }]);
 
   const updateHistory = (newHistory) => {
@@ -49,9 +49,22 @@ export default function Terminal() {
     setHistory(newHistory);
   };
 
+  // Scroll ONLY inside the terminal box, never the page
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (terminalBodyRef.current) {
+      terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;
+    }
   }, [history]);
+
+  // Focus input without moving the page viewport
+  const focusInputSilently = () => {
+    if (!inputRef.current) return;
+    // Save page scroll position, focus, then restore it
+    const x = window.scrollX;
+    const y = window.scrollY;
+    inputRef.current.focus({ preventScroll: true });
+    window.scrollTo(x, y);
+  };
 
   const handleKey = (e) => {
     if (e.key === "Enter") {
@@ -73,7 +86,6 @@ export default function Terminal() {
     const normalized = cmd.trim().toLowerCase();
     if (!normalized) return;
 
-    // Use ref to avoid stale closure
     const current = historyRef.current;
 
     if (normalized === "clear") {
@@ -82,7 +94,7 @@ export default function Terminal() {
       setInput("");
       setCmdHistory((h) => [normalized, ...h]);
       setHistIdx(-1);
-      inputRef.current?.focus();
+      focusInputSilently();
       return;
     }
 
@@ -96,7 +108,11 @@ export default function Terminal() {
     setInput("");
     setCmdHistory((h) => [normalized, ...h]);
     setHistIdx(-1);
-    inputRef.current?.focus();
+    focusInputSilently();
+  };
+
+  const handleTerminalClick = () => {
+    focusInputSilently();
   };
 
   return (
@@ -116,7 +132,7 @@ export default function Terminal() {
         {/* Terminal window */}
         <div
           className="rounded-xl border border-[#1e1e2e] overflow-hidden shadow-2xl"
-          onClick={() => inputRef.current?.focus()}
+          onClick={handleTerminalClick}
           style={{ boxShadow: "0 0 60px rgba(124,106,255,0.08)" }}
         >
           {/* Title bar */}
@@ -131,8 +147,11 @@ export default function Terminal() {
             </span>
           </div>
 
-          {/* Terminal body */}
-          <div className="bg-[#0d0d14] p-5 h-80 overflow-y-auto terminal-text text-sm">
+          {/* Terminal body — this scrolls internally, NOT the page */}
+          <div
+            ref={terminalBodyRef}
+            className="bg-[#0d0d14] p-5 h-80 overflow-y-auto terminal-text text-sm"
+          >
             {history.map((item, i) => (
               <div key={i} className="mb-2 leading-relaxed">
                 {item.type === "input" && (
@@ -171,7 +190,6 @@ export default function Terminal() {
                 className="flex-1 bg-transparent outline-none text-text font-mono text-sm caret-accent ml-0"
                 autoComplete="off"
                 spellCheck={false}
-                autoFocus
               />
             </div>
             <div ref={bottomRef} />
@@ -182,7 +200,10 @@ export default function Terminal() {
             {["help", "about", "skills", "experience", "projects", "contact"].map((cmd) => (
               <button
                 key={cmd}
-                onClick={() => runCommand(cmd)}
+                onClick={(e) => {
+                  e.stopPropagation(); // prevent bubbling to terminal onClick
+                  runCommand(cmd);
+                }}
                 className="font-mono text-xs px-2.5 py-1 rounded border border-[#1e1e2e] text-text-dim hover:text-accent hover:border-accent/40 transition-all duration-150"
               >
                 {cmd}

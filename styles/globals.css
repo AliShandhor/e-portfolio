@@ -12,6 +12,13 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevent browser restoring scroll position on load */
+  overflow-anchor: none;
+}
+
+/* Offset anchor links to account for fixed navbar height */
+section[id] {
+  scroll-margin-top: 64px;
 }
 
 body {

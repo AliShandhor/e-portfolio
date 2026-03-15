@@ -4,7 +4,11 @@ export default function Footer() {
   return (
     <footer className="py-10 px-6 border-t border-[#1e1e2e]">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <a href="#hero" className="font-mono text-sm text-accent font-medium tracking-wider">
+        <a
+          href="/"
+          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+          className="font-mono text-sm text-accent font-medium tracking-wider cursor-pointer"
+        >
           ali<span className="text-green">.</span>sh
         </a>
         <p className="font-mono text-xs text-muted text-center">

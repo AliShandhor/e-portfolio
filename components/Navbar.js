@@ -28,7 +28,11 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#hero" className="font-mono text-sm text-accent font-medium tracking-wider">
+        <a
+          href="/"
+          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+          className="font-mono text-sm text-accent font-medium tracking-wider cursor-pointer"
+        >
           ali<span className="text-green">.</span>sh
         </a>
 
