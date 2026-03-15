@@ -55,7 +55,7 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1e1e2e] bg-[#111118] mb-8 animate-fade-in">
               <span className="glow-dot" />
               <span className="font-mono text-xs text-text-dim">
-                Available for new grad roles · May 2026
+                Available for new grad roles · May 2027
               </span>
             </div>
 
