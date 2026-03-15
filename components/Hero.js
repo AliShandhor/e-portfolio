@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { personalInfo } from "../data/resume";
+import Image from "next/image";
 
 const roles = [
   "Software Engineering Student",
   "Backend Engineer",
-  "Automation Engineer",
   "AI/ML Enthusiast",
+  "Automation Engineer",
 ];
 
 export default function Hero() {
@@ -34,7 +35,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="scroll-mt-16 relative min-h-screen flex flex-col justify-center hero-mesh pt-16"
+      className="relative min-h-screen flex flex-col justify-center hero-mesh pt-16"
     >
       {/* Grid background */}
       <div
@@ -54,7 +55,7 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1e1e2e] bg-[#111118] mb-8 animate-fade-in">
               <span className="glow-dot" />
               <span className="font-mono text-xs text-text-dim">
-                Available for new grad roles · May 2027
+                Available for new grad roles · May 2026
               </span>
             </div>
 
@@ -159,10 +160,11 @@ export default function Hero() {
               {/* Photo */}
               <div className="absolute inset-6 rounded-full overflow-hidden border-2 border-accent/40"
                 style={{ boxShadow: "0 0 40px rgba(124,106,255,0.2), inset 0 0 20px rgba(0,0,0,0.4)" }}>
-                <img
+                <Image
                   src="/profile.jpg"
                   alt="Ali Shandhor"
-                  className="w-full h-full object-cover object-top"
+                  fill
+                  className="object-cover object-top"
                 />
               </div>
 

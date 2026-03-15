@@ -40,7 +40,7 @@ const categories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="scroll-mt-16 py-24 px-6 border-t border-[#1e1e2e]">
+    <section id="skills" className="py-24 px-6 border-t border-[#1e1e2e]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <span className="section-tag">Technical Stack</span>
@@ -74,7 +74,7 @@ export default function Skills() {
 
           {/* Currently learning card */}
           <div className="p-6 rounded-xl border border-dashed border-[#2a2a3a] bg-[#0d0d14] flex flex-col justify-center">
-            <p className="font-mono text-xs text-muted mb-3">// currently_exploring</p>
+            <p className="font-mono text-xs text-muted mb-3">&#47;&#47; currently_exploring</p>
             <div className="flex flex-wrap gap-2">
               {["Rust", "Kubernetes", "LLM Fine-tuning", "Ray"].map((s) => (
                 <span

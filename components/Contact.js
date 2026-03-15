@@ -19,7 +19,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="scroll-mt-16 py-24 px-6 border-t border-[#1e1e2e]">
+    <section id="contact" className="py-24 px-6 border-t border-[#1e1e2e]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <span className="section-tag">Get In Touch</span>
@@ -28,7 +28,7 @@ export default function Contact() {
           </h2>
           <p className="text-text-dim text-base mt-3 max-w-md mx-auto">
             Open to new grad roles, internships, and interesting projects.
-            Let's build something together.
+            Let&apos;s build something together.
           </p>
         </div>
 

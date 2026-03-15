@@ -1,8 +1,9 @@
 import { personalInfo, education } from "../data/resume";
+import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="scroll-mt-16 py-24 px-6 border-t border-[#1e1e2e]">
+    <section id="about" className="py-24 px-6 border-t border-[#1e1e2e]">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Text */}
@@ -15,16 +16,16 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-text-dim text-base leading-relaxed">
               <p>
-                I'm a Senior Software Engineering student at York University with hands-on industry
+                I&apos;m a Senior Software Engineering student at York University with hands-on industry
                 experience across three internships — building optical network automation at Ciena,
                 5G test frameworks at Ericsson, and AI voice synthesis at Vosyn.
               </p>
               <p>
                 My work spans backend engineering, automation, machine learning, and cloud systems.
-                I'm drawn to problems that involve making systems faster, more reliable, or more intelligent.
+                I&apos;m drawn to problems that involve making systems faster, more reliable, or more intelligent.
               </p>
               <p>
-                Outside of code, I'm interested in the intersection of AI and infrastructure — how
+                Outside of code, I&apos;m interested in the intersection of AI and infrastructure — how
                 intelligent systems can automate the tedious parts of engineering work itself.
               </p>
             </div>
@@ -130,10 +131,11 @@ function AboutPhoto() {
         className="relative w-full h-full rounded-2xl overflow-hidden border border-accent/30"
         style={{ boxShadow: "0 0 30px rgba(124,106,255,0.15)" }}
       >
-        <img
+        <Image
           src="/profile.jpg"
           alt="Ali Shandhor"
-          className="w-full h-full object-cover object-top"
+          fill
+          className="object-cover object-top"
         />
         {/* Subtle overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-bg/30 to-transparent" />
