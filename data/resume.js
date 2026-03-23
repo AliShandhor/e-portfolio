@@ -4,7 +4,7 @@ export const personalInfo = {
   name: "Ali Shandhor",
   title: "Software Engineering Student",
   subtitle: "Intern @ Ciena · Previously @ Ericsson · York University",
-  email: "ali2030@my.yorku.ca",
+  email: "a.shanzoorwork@gmail.com",
   phone: "+1 289-689-0664",
   location: "Ottawa, Canada",
   github: "https://github.com/alishandhor",
@@ -126,7 +126,7 @@ DATABASES   MongoDB · SQL · NoSQL`,
 [2023]     AI Software Development Intern @ Vosyn               Jul 2023 – Oct 2023
              PyTorch · Vision Transformer · Voice synthesis`,
 
-  contact: `EMAIL    ali2030@my.yorku.ca
+  contact: `EMAIL    a.shanzoorwork@gmail.com
 PHONE    +1 289-689-0664
 LOCATION Ottawa, Canada
 GITHUB   https://github.com/alishandhor
