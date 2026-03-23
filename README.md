@@ -97,9 +97,9 @@ All content is centralized in **`data/resume.js`**. Edit that file to update:
 ```js
 // data/resume.js
 export const personalInfo = {
-  github: "https://github.com/YOUR_USERNAME",
-  linkedin: "https://linkedin.com/in/YOUR_USERNAME",
-  website: "https://yourwebsite.com",
+  github: "https://github.com/alishandhor",
+  linkedin: "https://www.linkedin.com/in/ali-shandhor-204a6a271",
+  website: "https://ali-shandhor.com",
   // ...
 };
 ```

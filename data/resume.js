@@ -7,9 +7,9 @@ export const personalInfo = {
   email: "ali2030@my.yorku.ca",
   phone: "+1 289-689-0664",
   location: "Ottawa, Canada",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
-  website: "https://website.com",
+  github: "https://github.com/alishandhor",
+  linkedin: "https://linkedin.com/in/ali-shandhor-204a6a271",
+  website: "https://ali-shandhor.com",
   summary:
     "Senior Software Engineering student with 2+ years of hands-on experience writing and testing code, building automation frameworks, and delivering software solutions across diverse industries. Experienced in both corporate and startup environments, demonstrating strong analytical skills and a results-driven approach to solving complex, real-world engineering challenges.",
 };
@@ -129,8 +129,8 @@ DATABASES   MongoDB · SQL · NoSQL`,
   contact: `EMAIL    ali2030@my.yorku.ca
 PHONE    +1 289-689-0664
 LOCATION Ottawa, Canada
-GITHUB   github.com
-LINKEDIN linkedin.com`,
+GITHUB   https://github.com/alishandhor
+LINKEDIN https://linkedin.com/in/ali-shandhor-204a6a271`,
 
   resume: `Resume available for download at:
 → /Ali_Shandhor_Resume.pdf

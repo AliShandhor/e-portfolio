@@ -95,13 +95,13 @@ export default function Contact() {
               },
               {
                 label: "GitHub",
-                value: "github.com/alishandhor",
+                value: "https://github.com/alishandhor",
                 href: personalInfo.github,
                 icon: "⌥",
               },
               {
                 label: "LinkedIn",
-                value: "linkedin.com/in/alishandhor",
+                value: "https://www.linkedin.com/in/ali-shandhor-204a6a271",
                 href: personalInfo.linkedin,
                 icon: "◈",
               },
