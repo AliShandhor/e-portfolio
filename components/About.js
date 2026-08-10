@@ -30,6 +30,25 @@ export default function About() {
               </p>
             </div>
 
+            <div className="mt-8 rounded-xl border border-[#1e1e2e] bg-card p-4 md:p-6">
+              <p className="font-mono text-xs text-accent mb-3">Lifelong Learning Reflection</p>
+              <p className="text-text-dim text-sm leading-relaxed mb-4">
+                A short reflection video is embedded below for easy viewing by my instructor.
+              </p>
+              <div className="overflow-hidden rounded-lg border border-[#1e1e2e] bg-black">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full aspect-video"
+                  title="Lifelong Learning Reflection"
+                >
+                  <source src="/lifelong-learning-reflection.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
             {/* Photo — mobile only, shown below text on small screens */}
             <div className="mt-8 flex md:hidden justify-center">
               <AboutPhoto />
